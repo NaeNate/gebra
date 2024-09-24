@@ -111,7 +111,7 @@ while running:
   screen.fill("black")
 
   pygame.draw.rect(screen, "grey", (padding, padding, width - padding * 2, height - padding * 2), 3, 3)
-  screen.blit(font.render(str(score + 1), True, "white"), (10, 10))
+  screen.blit(font.render(str(score - 1), True, "white"), (10, 10))
 
   if len(queue) > 0 and time.time() - last_launch > delay:
     balls.append(queue.pop(0))
@@ -128,7 +128,7 @@ while running:
         score += 1
 
         for shape in shapes:
-          shape.y -= 50
+          shape.y -= 70
 
         for _ in range(5):
           shapes.append(Shape())
